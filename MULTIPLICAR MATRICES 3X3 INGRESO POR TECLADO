@@ -1,0 +1,39 @@
+#include <stdio.h>
+/*Crear un programa que multiplique los elementos de 2 matrices de 3x3, que contiene números enteros. 
+Las dos matrices deben ser ingresadas por teclado por el usuario y luego mostrar el resultado de la forma más gráfica posible. */
+	
+int main() {
+	int A[3][3];
+	for (int x=0;x<3;x++){
+		for(int k=0;k<3;k++){
+			printf("Igrese Elemento %d%d de la matriz A: ",x,k);
+			scanf("%d", &A[x][k]);
+		}
+	}
+	int B[3][3];
+	for (int k=0;k<3;k++){
+		for(int y=0;y<3;y++){
+			printf("Igrese Elemento %d%d de la matriz B: ",k,y);
+			scanf("%d", &B[k][y]);
+		}
+	}
+	int C[3][3];
+	for (int x = 0; x < 3; x++) {
+		for (int y = 0; y < 3; y++) {
+			C[x][y] = 0;
+			for (int k = 0; k < 3; k++) {
+				C[x][y] = C[x][y] + A[x][k] * B[k][y];
+			}
+		}
+	}
+	printf("\n");
+	printf("EL resultado de A[] x B[] sera: \n");
+	for (int x = 0; x < 3; x++) {
+		for (int y = 0; y < 3; y++) {
+			printf("%d\t ", C[x][y]);
+		}
+		printf("\n");
+	}
+	
+	return 0;
+}
